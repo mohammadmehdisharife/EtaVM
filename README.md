@@ -1,2 +1,2 @@
-# EtaVM
-Trying to build a flexible virtual machine
+# MRT 
+this is a Mobile Runtime
