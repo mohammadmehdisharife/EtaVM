@@ -1,1 +1,1 @@
-gcc etavm.c function.c -o etavm
+gcc mrt.c function.c -o mrt
