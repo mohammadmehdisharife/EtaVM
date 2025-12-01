@@ -1,10 +1,7 @@
-// function.c
-
 #include "./function.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdlib.h>
 
 void print_function(char *args, int number_line) {
   char *arg;
@@ -31,7 +28,7 @@ void int_function(char *args, int number_line) {
   strtok(args, " ");
   name = strtok(NULL, " ");
   value = atoi(strtok(NULL, " "));
-  printf("args: %s\nname: %s\nvalue: %d\n",args,name,value);
+  printf("args: %s\nname: %s\nvalue: %d\n", args, name, value);
 }
 
 void execute_command(char *function, char *args, int number_line) {
@@ -41,5 +38,8 @@ void execute_command(char *function, char *args, int number_line) {
     shell_function(args, number_line);
   } else if (strcmp(function, "INT") == 0) {
     int_function(args, number_line);
-  }  
+  } else {
+    printf("\"%s\" is no a function | line <%d>\n", function, number_line);
+    exit(1);
+  }
 }

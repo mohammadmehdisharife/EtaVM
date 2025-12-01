@@ -1,5 +1,3 @@
-// mrt.c
-
 #include "./function.h"
 #include <stdio.h>
 #include <string.h>
@@ -20,12 +18,18 @@ int main(int argc, char *argv[]) {
   char args[1024];
   char *function;
   int number_line = 1;
+
   while (fgets(buffer, sizeof(buffer), file)) {
+
     buffer[strcspn(buffer, "\n")] = '\0';
     strcpy(args, buffer);
     function = strtok(buffer, " ");
 
     if (function == NULL) {
+      number_line++;
+      continue;
+    }
+    if (strcmp(function, "#") == 0) {
       number_line++;
       continue;
     }
