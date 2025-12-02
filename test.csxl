@@ -3,7 +3,11 @@
 PRINT Hello World
 
 INT age 19
-STR name mohammad mehdi sharife
+STR str one 
+STR strin two
+STR string three
+STR strings four
+INT number 458
 SHELL ls
 
 PRINT End of program

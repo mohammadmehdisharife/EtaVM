@@ -39,8 +39,8 @@ void add_str(char *value, char *name) {
     node_t *temp = (node_t*)malloc(sizeof(node_t));  
     tail->next = temp;      
     tail = temp;           
-    temp->type = STR_TYPE;  
-    strcpy(temp->data.str_value, value);  
+    temp->type = STR_TYPE;
+    strcpy(temp->data.str_value, value);
     temp->next = NULL;
     temp->name = strdup(name);
   }
@@ -63,9 +63,8 @@ void print_memory() {
     } else if (temp->type == STR_TYPE) {
       printf("name: %s | value: %s | type: STR_TYPE\n", temp->name, temp->data.str_value);
     }
-    print_head();
-    print_tail();
     temp = temp->next;
   }
-  printf("------------------------------------------\n");
+  print_head();
+  print_tail();
 }

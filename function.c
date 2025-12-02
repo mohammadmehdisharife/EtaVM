@@ -36,9 +36,16 @@ void int_function(char *args, int number_line) {
 void str_function(char *args, int number_line) {
   char *name;
   char *value;
-  strtok(NULL, " ");
+
+  strtok(args, " ");
   name = strtok(NULL, " ");
-  value = args + strlen(name) + 1;
+  value = strtok(NULL, "");
+
+  if (name == NULL || value == NULL) {
+    printf("Error: Invalid syntax at line %d\n", number_line);
+    return;
+  }
+
   add_str(value, name);
   // print_memory();
 }
