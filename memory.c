@@ -8,17 +8,19 @@ node_t *tail = NULL;
 
 int exist_variable(char *name) {
   node_t *temp = head;
+  int location = 0;
   while(temp != NULL) {
     if (strcmp(temp->name, name) == 0) {
-      return 1;
+      return location;
     }
+    location++;
     temp = temp->next;
   }
-  return 0;
+  return -1;
 }
 
 void add_int(int value, char *name) {
-  if (exist_variable(name) == 1) {
+  if (exist_variable(name) == -1) {
     printf("variable %s befor is exist\n",name);
     exit(1);
   }
@@ -42,7 +44,7 @@ void add_int(int value, char *name) {
 }
 
 void add_str(char *value, char *name) {
-  if (exist_variable(name) == 1) {
+  if (exist_variable(name) == -1) {
     printf("variable %s befor is exist\n",name);
     exit(1);
   }
