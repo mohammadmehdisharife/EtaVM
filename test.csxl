@@ -3,10 +3,10 @@
 PRINT Hello World
 
 STR name mohammad
-PRINT $name
+PRINT my name is: $name
 
 INT age 19
-PRINT $age
+PRINT my age is: $age
 
 SHELL ls
 
